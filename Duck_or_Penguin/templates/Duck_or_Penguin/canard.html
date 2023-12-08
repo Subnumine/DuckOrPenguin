@@ -1,0 +1,15 @@
+{% extends 'Duck_or_Penguin/base.html' %}
+
+{% block content %}
+<p class="réponse"> Oh mon dieu ! Si le réseau ne se trompe pas, 
+    nous sommes en face d'un magnifique spécimen de {{animal.name}} !
+</p>
+<p>
+    Regardez ces plumes, regardez ce bec !
+</p>
+{% if photo %}
+<div class="photo">
+    <img src="{{ photo.image.url }}", alt="Photographie d'un(e) {{animal.name}}", class="photo_ani"/>
+</div>
+{% endif %}
+{% endblock %}

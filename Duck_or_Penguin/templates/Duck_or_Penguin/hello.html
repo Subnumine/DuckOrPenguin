@@ -1,0 +1,19 @@
+{% extends 'Duck_or_Penguin/base.html' %}
+
+{% block content %}
+<p> 
+    Cette application vous permet de détecter l'animal présent sur une photo. 
+    Espérons qu'il s'agisse d'un canard ou d'un manchot !
+</p>
+<p>
+    La détection est réalisée à l'aide d'un réseau de neurones entraîné 
+    sur des photographies de 90 espèces animales différentes.
+</p>
+<form method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="button">
+        <button class="select" type="submit">Quel est cet animal ??</button>
+    </div>
+</form>
+{% endblock %}
